@@ -1,4 +1,4 @@
-# ha_challenge
+# HA Challenge
 Humanising Autonomy Python Challenge
 
 ## Requirements to run the program
