@@ -141,10 +141,10 @@ class Tracker():
         # otherwise, match the new detected objects with previosuly tracked objects using the Hungarian Algorithm
         else:
             ids = list(self.objects.keys())                             # list of tracked objects IDs
-            Object_centers = np.array(list(self.objects.values()))      # list of tracked objects bbox centers
+            tracked_object_centers = np.array(list(self.objects.values()))      # list of tracked objects bbox centers
 
             # compute the euclidean distances between bbox centers of tracked objects and new detections
-            distance, id_pairs = self.euclideanDistance(Object_centers, centers, ids)   
+            distance, id_pairs = self.euclideanDistance(tracked_object_centers, centers, ids)   
 
             # call the Hungarian Algorithm to match detections with tracked objects
             real_matches, unmatched_detections, unmatched_objects = self.hungarianAlgorithm(detections, distance, id_pairs)
